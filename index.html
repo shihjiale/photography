@@ -28,91 +28,62 @@
 <body
   class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500">
   <!-- Navbar -->
-  <header class="flex w-full overflow-hidden pt-10 pb-1">
-    <!-- Navbar -->
-    <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
-      <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap">
-        <div class="mr-4 md:mr-8">
-          <a href="index.html" class="text-2xl font-signika font-bold">CALEB SHIH</a>
-        </div>
-        <div class="ml-auto md:hidden flex items-center justify-start">
-          <button onclick="menuToggle()" @click="open = !open"
-            class="tap-highlight-transparent text-black dark:text-white w-5 h-5 relative focus:outline-none"
-            @click="open = !open">
-            <span class="sr-only">Open main menu</span>
-            <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <span aria-hidden="true"
-                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
-                :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
-              <span aria-hidden="true"
-                class="block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out"
-                :class="{'opacity-0': open } "></span>
-              <span aria-hidden="true"
-                class="block absolute h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out"
-                :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
-            </div>
-          </button>
-        </div>
-        <div id="menu"
-          class="w-full h-0 transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center">
-          <ul id="ulMenu"
-            class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
-            <li class="group transition duration-300">
-              <a href="index.html" class="font-signika text-2xl tap-highlight-transparent">PORTFOLIO
-                <span class="hidden md:block h-0.5 bg-black dark:bg-white"></span>
-              </a>
-            </li>
-            <li class="group transition duration-300">
-              <a href="archive.html" 
-                class="menu-hover font-signika text-2xl tap-highlight-transparent"
-                onClick=""
-                >
-                
-                ARCHIVE
-                
-                  <span class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
-               
-              </a>
-              <div
-                class="invisible absolute z-50 flex w-full flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible"
-                onClick=""
-                >
-            <a
-                  class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2"
-                  >Cats!</a
-                  >
-
-                <a
-                class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2"
-                  >People</a
-                >
-                <a
-                    class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2"
-                  >Landscapes
-                </a>
-                <a
-                class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2"
-                >Objects
-                </a>
-              </div>
-            </li>
-            <li class="group transition duration-300">
-              <a href="about_me.html" class="font-signika text-2xl tap-highlight-transparent">ABOUT ME
-                <span
-                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
-              </a>
-            </li>
-            <li class="group transition duration-300">
-              <a href="contact.html" class="font-signika text-2xl tap-highlight-transparent">CONTACT
-                <span
-                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
-              </a>
-            </li>
-          </ul>
-        </div>
+ <header class="flex w-full overflow-hidden pb-1 pt-10">
+  <!-- Navbar -->
+  <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
+    <div class="md:flex-no-wrap container mx-auto flex flex-wrap items-center">
+      <div class="mr-4 md:mr-8">
+        <a href="index.html" class="font-signika text-2xl font-bold">CALEB SHIH</a>
       </div>
-    </nav>
-  </header>
+      <div class="ml-auto flex items-center justify-start md:hidden">
+        <button onclick="menuToggle()" @click="open = !open" class="tap-highlight-transparent relative h-5 w-5 text-black focus:outline-none dark:text-white" @click="open = !open">
+          <span class="sr-only">Open main menu</span>
+          <div class="absolute left-1/2 top-1/2 block w-5 -translate-x-1/2 -translate-y-1/2 transform">
+            <span aria-hidden="true" class="absolute block h-0.5 w-5 transform bg-current transition duration-500 ease-in-out" :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+            <span aria-hidden="true" class="absolute block h-0.5 w-5 transform bg-current transition duration-500 ease-in-out" :class="{'opacity-0': open } "></span>
+            <span aria-hidden="true" class="absolute block h-0.5 w-5 transform bg-current transition duration-500 ease-in-out" :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+          </div>
+        </button>
+      </div>
+      <div id="menu" class="h-0 w-full transition-all duration-500 ease-out md:flex md:w-auto md:flex-grow md:items-center md:transition-none">
+        <ul id="ulMenu" class="mt-5 flex flex-col duration-300 ease-out sm:transition-none md:ml-auto md:mt-0 md:flex-row md:items-center md:space-x-5 md:border-0 md:pt-0">
+          <li class="group transition duration-300">
+            <a href="index.html" class="font-signika tap-highlight-transparent text-2xl"
+              >PORTFOLIO
+              <span class="hidden h-0.5 bg-black dark:bg-white md:block"></span>
+            </a>
+          </li>
+          <li class="group transition duration-300">
+            <a href="archive.html" class="menu-hover font-signika tap-highlight-transparent text-2xl" onClick="">
+              ARCHIVE
+
+              <span class="hidden h-0.5 max-w-0 bg-black transition-all duration-500 group-hover:max-w-full dark:bg-white md:block"></span>
+            </a>
+            <div class="invisible absolute z-50 flex w-full flex-col bg-gray-100 px-4 py-1 text-gray-800 shadow-xl group-hover:visible" onClick="">
+              <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">Product One</a>
+
+              <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">Product Two</a>
+              <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">Product Three </a>
+              <a class="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">Product Four </a>
+            </div>
+          </li>
+          <li class="group transition duration-300">
+            <a href="about_me.html" class="font-signika tap-highlight-transparent text-2xl"
+              >ABOUT ME
+              <span class="hidden h-0.5 max-w-0 bg-black transition-all duration-500 group-hover:max-w-full dark:bg-white md:block"></span>
+            </a>
+          </li>
+          <li class="group transition duration-300">
+            <a href="contact.html" class="font-signika tap-highlight-transparent text-2xl"
+              >CONTACT
+              <span class="hidden h-0.5 max-w-0 bg-black transition-all duration-500 group-hover:max-w-full dark:bg-white md:block"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
   <!-- Content -->
   <div class="container mx-auto">
     <h1 class="text-4xl pt-10 pb-8 font-bold">PORTFOLIO</h1>
